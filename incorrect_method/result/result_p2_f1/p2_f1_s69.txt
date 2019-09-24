@@ -1,0 +1,50 @@
+2019-07-16 14:25:56 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work2943802749181398209
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 69
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_method
+================================================================
+2019-07-16 14:25:58 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 14:26:01 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 100, syntax-valid 51, build-succeeded 20
+Fitness: max 0.8333333333333334(19), min 0.6666666666666666(1), ave 0.825
+----------------------------------------------------------------
+
+2019-07-16 14:26:01 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 14:26:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 100, syntax-valid 60, build-succeeded 12
+Fitness: max 0.8333333333333334(9), min 0.6666666666666666(3), ave 0.7916666666666666
+----------------------------------------------------------------
+
+2019-07-16 14:26:03 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 14:26:06 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 14:26:06 [main] [INFO]  Patch - 
+--- incorrect_method.Class1
++++ incorrect_method.Class1
+@@ -17,7 +17,7 @@
+ 		int sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.pow(i); // bug here
++				sum += sample.fact(i);
+ 			}
+ 		}
+ 		return sum;
+2019-07-16 14:26:06 [main] [INFO]  KGenProgMain - execution time: 8 seconds

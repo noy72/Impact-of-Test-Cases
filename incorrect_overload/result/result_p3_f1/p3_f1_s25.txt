@@ -1,0 +1,128 @@
+2019-07-16 16:28:34 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work3504382198779639806
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 25
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_overload
+================================================================
+2019-07-16 16:28:37 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 16:28:41 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 61, build-succeeded 12
+Fitness: max 0.9090909090909091(8), min 0.0(2), ave 0.6212121212121212
+----------------------------------------------------------------
+
+2019-07-16 16:28:41 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 16:28:44 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 seconds
+Variants: generated 100, syntax-valid 70, build-succeeded 13
+Fitness: max 0.9090909090909091(8), min 0.0(2), ave 0.5804195804195804
+----------------------------------------------------------------
+
+2019-07-16 16:28:44 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 16:28:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 100, syntax-valid 72, build-succeeded 13
+Fitness: max 0.9090909090909091(6), min 0.0(4), ave 0.4405594405594406
+----------------------------------------------------------------
+
+2019-07-16 16:28:48 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-16 16:28:52 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 seconds
+Variants: generated 106, syntax-valid 76, build-succeeded 16
+Fitness: max 0.9090909090909091(5), min 0.0(7), ave 0.3068181818181818
+----------------------------------------------------------------
+
+2019-07-16 16:28:52 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-16 16:28:55 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 seconds
+Variants: generated 104, syntax-valid 69, build-succeeded 6
+Fitness: max 0.9090909090909091(4), min 0.0(1), ave 0.6212121212121212
+----------------------------------------------------------------
+
+2019-07-16 16:28:55 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-16 16:28:57 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 20 seconds
+Variants: generated 102, syntax-valid 67, build-succeeded 18
+Fitness: max 0.9090909090909091(8), min 0.0(6), ave 0.4242424242424242
+----------------------------------------------------------------
+
+2019-07-16 16:28:57 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-16 16:29:00 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 23 seconds
+Variants: generated 112, syntax-valid 82, build-succeeded 19
+Fitness: max 0.9090909090909091(8), min 0.0(8), ave 0.3971291866028708
+----------------------------------------------------------------
+
+2019-07-16 16:29:00 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-07-16 16:29:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 27 seconds
+Variants: generated 134, syntax-valid 92, build-succeeded 33
+Fitness: max 0.9090909090909091(13), min 0.0(9), ave 0.3884297520661157
+----------------------------------------------------------------
+
+2019-07-16 16:29:04 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-07-16 16:29:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 30 seconds
+Variants: generated 138, syntax-valid 94, build-succeeded 30
+Fitness: max 0.9090909090909091(11), min 0.0(9), ave 0.3636363636363636
+----------------------------------------------------------------
+
+2019-07-16 16:29:07 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-07-16 16:29:10 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 33 seconds
+Variants: generated 126, syntax-valid 81, build-succeeded 17
+Fitness: max 0.9090909090909091(10), min 0.0(3), ave 0.5561497326203209
+----------------------------------------------------------------
+
+2019-07-16 16:29:10 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-07-16 16:29:13 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 35 seconds
+Variants: generated 144, syntax-valid 75, build-succeeded 25
+Fitness: max 0.9090909090909091(17), min 0.0(3), ave 0.6363636363636364
+----------------------------------------------------------------
+
+2019-07-16 16:29:13 [main] [INFO]  KGenProgMain - entered the era of 12th generation.
+2019-07-16 16:29:16 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 16:29:16 [main] [INFO]  Patch - 
+--- incorrect_overload.Class1
++++ incorrect_overload.Class1
+@@ -7,12 +7,12 @@
+ 
+ 		int x, y;
+ 		x = sample.pow(a, n) % list.size(); // bug here
++		x = sample.pow(a) % list.size();
+ 		y = sample.pow(a, n) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+-		if(subList == null) {
++		if(subList == null)
+ 			return -1;
+-		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+2019-07-16 16:29:16 [main] [INFO]  KGenProgMain - execution time: 39 seconds

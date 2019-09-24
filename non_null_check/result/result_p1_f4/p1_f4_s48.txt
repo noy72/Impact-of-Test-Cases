@@ -1,0 +1,93 @@
+2019-07-17 05:56:07 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work2636231207533171178
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 48
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/non_null_check
+================================================================
+2019-07-17 05:56:09 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 05:56:11 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 100, syntax-valid 55, build-succeeded 6
+Fitness: max 0.047619047619047616(6), min 0.047619047619047616(6), ave 0.047619047619047616
+----------------------------------------------------------------
+
+2019-07-17 05:56:11 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 05:56:13 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 100, syntax-valid 64, build-succeeded 11
+Fitness: max 0.047619047619047616(10), min 0.0(1), ave 0.04329004329004329
+----------------------------------------------------------------
+
+2019-07-17 05:56:13 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 05:56:15 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 100, syntax-valid 67, build-succeeded 8
+Fitness: max 0.047619047619047616(3), min 0.0(5), ave 0.017857142857142856
+----------------------------------------------------------------
+
+2019-07-17 05:56:15 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-17 05:56:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 seconds
+Variants: generated 102, syntax-valid 71, build-succeeded 10
+Fitness: max 0.047619047619047616(9), min 0.0(1), ave 0.04285714285714286
+----------------------------------------------------------------
+
+2019-07-17 05:56:17 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-17 05:56:19 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 seconds
+Variants: generated 104, syntax-valid 71, build-succeeded 8
+Fitness: max 0.047619047619047616(5), min 0.0(3), ave 0.02976190476190476
+----------------------------------------------------------------
+
+2019-07-17 05:56:19 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-17 05:56:21 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 seconds
+Variants: generated 102, syntax-valid 79, build-succeeded 13
+Fitness: max 0.047619047619047616(9), min 0.0(4), ave 0.03296703296703297
+----------------------------------------------------------------
+
+2019-07-17 05:56:21 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-17 05:56:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 seconds
+Variants: generated 116, syntax-valid 73, build-succeeded 9
+Fitness: max 0.047619047619047616(5), min 0.0(4), ave 0.026455026455026454
+----------------------------------------------------------------
+
+2019-07-17 05:56:23 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-07-17 05:56:26 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 05:56:26 [main] [INFO]  Patch - 
+--- non_null_check.Class1
++++ non_null_check.Class1
+@@ -13,6 +13,11 @@
+ 		// if(subList == null) { //bug here
+ 		// 	return -1;
+ 		// }
++		if (list == null)
++			return -1;
++		if (subList == null) {
++			return -1;
++		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+2019-07-17 05:56:26 [main] [INFO]  KGenProgMain - execution time: 17 seconds

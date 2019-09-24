@@ -1,0 +1,49 @@
+2019-07-16 17:09:55 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work4460161749171339078
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 76
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_overload
+================================================================
+2019-07-16 17:09:58 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 17:10:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 100, syntax-valid 61, build-succeeded 15
+Fitness: max 0.9090909090909091(13), min 0.0(1), ave 0.7939393939393938
+----------------------------------------------------------------
+
+2019-07-16 17:10:03 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 17:10:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 seconds
+Variants: generated 100, syntax-valid 72, build-succeeded 11
+Fitness: max 0.9090909090909091(5), min 0.0(3), ave 0.4380165289256199
+----------------------------------------------------------------
+
+2019-07-16 17:10:07 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 17:10:11 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 17:10:11 [main] [INFO]  Patch - 
+--- incorrect_overload.Class1
++++ incorrect_overload.Class1
+@@ -8,6 +8,7 @@
+ 		int x, y;
+ 		x = sample.pow(a, n) % list.size(); // bug here
+ 		y = sample.pow(a, n) % list.size();
++		x = sample.pow(a) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+ 		if(subList == null) {
+2019-07-16 17:10:11 [main] [INFO]  KGenProgMain - execution time: 12 seconds

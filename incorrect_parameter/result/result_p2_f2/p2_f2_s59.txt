@@ -1,0 +1,45 @@
+2019-07-17 06:21:09 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work7381723043007839024
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 59
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_parameter
+================================================================
+2019-07-17 06:21:11 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 06:21:13 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 100, syntax-valid 62, build-succeeded 13
+Fitness: max 0.6(2), min 0.5(11), ave 0.5153846153846154
+----------------------------------------------------------------
+
+2019-07-17 06:21:13 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 06:21:15 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 06:21:15 [main] [INFO]  Patch - 
+--- incorrect_parameter.Class1
++++ incorrect_parameter.Class1
+@@ -16,9 +16,8 @@
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.fact(a); // bug here
+-			}
++			if(i >= l && i <= h)
++				sum += sample.fact(i);
+ 		}
+ 		return sum;
+ 	}
+2019-07-17 06:21:15 [main] [INFO]  KGenProgMain - execution time: 4 seconds

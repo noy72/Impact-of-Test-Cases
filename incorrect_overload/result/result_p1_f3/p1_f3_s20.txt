@@ -1,0 +1,41 @@
+2019-07-16 21:45:48 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work4552057513220183275
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 20
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_overload
+================================================================
+2019-07-16 21:45:50 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 21:45:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 100, syntax-valid 58, build-succeeded 14
+Fitness: max 0.36363636363636365(2), min 0.0(1), ave 0.12337662337662338
+----------------------------------------------------------------
+
+2019-07-16 21:45:53 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 21:45:56 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 21:45:56 [main] [INFO]  Patch - 
+--- incorrect_overload.Class1
++++ incorrect_overload.Class1
+@@ -7,6 +7,7 @@
+ 
+ 		int x, y;
+ 		x = sample.pow(a, n) % list.size(); // bug here
++		x = sample.pow(a) % list.size();
+ 		y = sample.pow(a, n) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+2019-07-16 21:45:56 [main] [INFO]  KGenProgMain - execution time: 5 seconds

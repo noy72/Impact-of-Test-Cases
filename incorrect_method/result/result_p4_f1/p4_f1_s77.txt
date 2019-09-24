@@ -1,0 +1,97 @@
+2019-07-16 16:23:36 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work4931740404353141583
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 77
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_method
+================================================================
+2019-07-16 16:23:39 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 16:23:44 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 100, syntax-valid 56, build-succeeded 20
+Fitness: max 0.9523809523809523(19), min 0.7619047619047619(1), ave 0.9428571428571428
+----------------------------------------------------------------
+
+2019-07-16 16:23:44 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 16:23:47 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 seconds
+Variants: generated 100, syntax-valid 60, build-succeeded 14
+Fitness: max 0.9523809523809523(13), min 0.7619047619047619(1), ave 0.9387755102040816
+----------------------------------------------------------------
+
+2019-07-16 16:23:47 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 16:23:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 11 seconds
+Variants: generated 100, syntax-valid 70, build-succeeded 11
+Fitness: max 0.9523809523809523(8), min 0.09523809523809523(1), ave 0.8484848484848484
+----------------------------------------------------------------
+
+2019-07-16 16:23:51 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-16 16:23:54 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 seconds
+Variants: generated 100, syntax-valid 66, build-succeeded 17
+Fitness: max 0.9523809523809523(14), min 0.7619047619047619(1), ave 0.9299719887955181
+----------------------------------------------------------------
+
+2019-07-16 16:23:54 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-16 16:23:57 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 seconds
+Variants: generated 104, syntax-valid 64, build-succeeded 13
+Fitness: max 0.9523809523809523(12), min 0.09523809523809523(1), ave 0.8864468864468864
+----------------------------------------------------------------
+
+2019-07-16 16:23:57 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-16 16:24:00 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 20 seconds
+Variants: generated 106, syntax-valid 64, build-succeeded 18
+Fitness: max 0.9523809523809523(13), min 0.09523809523809523(1), ave 0.8703703703703703
+----------------------------------------------------------------
+
+2019-07-16 16:24:00 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-16 16:24:02 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 16:24:02 [main] [INFO]  Patch - 
+--- incorrect_method.Class1
++++ incorrect_method.Class1
+@@ -17,7 +17,8 @@
+ 		int sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.pow(i); // bug here
++				x = sample.pow(a) % list.size();
++				sum += sample.fact(i);
+ 			}
+ 		}
+ 		return sum;
+2019-07-16 16:24:02 [main] [INFO]  Patch - 
+--- incorrect_method.Class2
++++ incorrect_method.Class2
+@@ -30,7 +30,9 @@
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {
+-			res.add(list.get(l));
++			for (; l < r; l++) {
++				res.add(list.get(l));
++			}
+ 		}
+ 		return res;
+ 	}
+2019-07-16 16:24:03 [main] [INFO]  KGenProgMain - execution time: 23 seconds

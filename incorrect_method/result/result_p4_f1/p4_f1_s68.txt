@@ -1,0 +1,61 @@
+2019-07-16 16:19:29 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work3187090737409133573
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 68
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_method
+================================================================
+2019-07-16 16:19:32 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 16:19:35 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 47, build-succeeded 13
+Fitness: max 0.9523809523809523(12), min 0.8571428571428571(1), ave 0.945054945054945
+----------------------------------------------------------------
+
+2019-07-16 16:19:35 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 16:19:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 100, syntax-valid 69, build-succeeded 20
+Fitness: max 0.9523809523809523(17), min 0.09523809523809523(1), ave 0.9
+----------------------------------------------------------------
+
+2019-07-16 16:19:38 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 16:19:42 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 16:19:42 [main] [INFO]  Patch - 
+--- incorrect_method.Class1
++++ incorrect_method.Class1
+@@ -17,7 +17,7 @@
+ 		int sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.pow(i); // bug here
++				sum += sample.fact(i);
+ 			}
+ 		}
+ 		return sum;
+2019-07-16 16:19:42 [main] [INFO]  Patch - 
+--- incorrect_method.Class2
++++ incorrect_method.Class2
+@@ -29,6 +29,7 @@
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
++		int x, y;
+ 		for(; l < r; l++) {
+ 			res.add(list.get(l));
+ 		}
+2019-07-16 16:19:42 [main] [INFO]  KGenProgMain - execution time: 10 seconds

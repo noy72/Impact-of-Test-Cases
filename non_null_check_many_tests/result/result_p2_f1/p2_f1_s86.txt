@@ -1,0 +1,35 @@
+2019-07-16 20:01:51 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work3630807910120691634
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT6M
+testTimeLimit = PT1M
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 86
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/non_null_check_many_tests
+================================================================
+2019-07-16 20:01:54 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 20:01:57 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 20:01:57 [main] [INFO]  Patch - 
+--- non_null_check_many_tests.Class1
++++ non_null_check_many_tests.Class1
+@@ -13,6 +13,9 @@
+ 		// if(subList == null) { //bug here
+ 		// 	return -1;
+ 		// }
++		if (subList == null) {
++			return -1;
++		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+2019-07-16 20:01:57 [main] [INFO]  KGenProgMain - execution time: 3 seconds

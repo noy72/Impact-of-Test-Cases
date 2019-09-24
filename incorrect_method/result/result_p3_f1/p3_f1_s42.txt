@@ -1,0 +1,122 @@
+2019-07-16 15:13:16 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work7917193737321242921
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 42
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_method
+================================================================
+2019-07-16 15:13:19 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 15:13:24 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 100, syntax-valid 52, build-succeeded 13
+Fitness: max 0.9090909090909091(13), min 0.9090909090909091(13), ave 0.9090909090909091
+----------------------------------------------------------------
+
+2019-07-16 15:13:24 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 15:13:28 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 seconds
+Variants: generated 100, syntax-valid 61, build-succeeded 12
+Fitness: max 0.9090909090909091(12), min 0.9090909090909091(12), ave 0.9090909090909091
+----------------------------------------------------------------
+
+2019-07-16 15:13:28 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 15:13:32 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 seconds
+Variants: generated 100, syntax-valid 68, build-succeeded 18
+Fitness: max 0.9090909090909091(14), min 0.7272727272727273(1), ave 0.8838383838383838
+----------------------------------------------------------------
+
+2019-07-16 15:13:32 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-16 15:13:35 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 seconds
+Variants: generated 100, syntax-valid 60, build-succeeded 10
+Fitness: max 0.9090909090909091(8), min 0.7272727272727273(1), ave 0.8818181818181818
+----------------------------------------------------------------
+
+2019-07-16 15:13:35 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-16 15:13:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 seconds
+Variants: generated 100, syntax-valid 59, build-succeeded 20
+Fitness: max 0.9090909090909091(12), min 0.09090909090909091(1), ave 0.8318181818181818
+----------------------------------------------------------------
+
+2019-07-16 15:13:38 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-16 15:13:40 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 20 seconds
+Variants: generated 106, syntax-valid 61, build-succeeded 12
+Fitness: max 0.9090909090909091(9), min 0.7272727272727273(1), ave 0.8787878787878788
+----------------------------------------------------------------
+
+2019-07-16 15:13:40 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-16 15:13:43 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 24 seconds
+Variants: generated 104, syntax-valid 64, build-succeeded 16
+Fitness: max 0.9090909090909091(12), min 0.7272727272727273(1), ave 0.8806818181818181
+----------------------------------------------------------------
+
+2019-07-16 15:13:43 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-07-16 15:13:47 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 27 seconds
+Variants: generated 132, syntax-valid 83, build-succeeded 29
+Fitness: max 0.9090909090909091(24), min 0.7272727272727273(3), ave 0.884012539184953
+----------------------------------------------------------------
+
+2019-07-16 15:13:47 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-07-16 15:13:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 30 seconds
+Variants: generated 130, syntax-valid 79, build-succeeded 20
+Fitness: max 0.9090909090909091(18), min 0.7272727272727273(2), ave 0.8909090909090909
+----------------------------------------------------------------
+
+2019-07-16 15:13:50 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-07-16 15:13:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 33 seconds
+Variants: generated 118, syntax-valid 73, build-succeeded 15
+Fitness: max 0.9090909090909091(13), min 0.8181818181818182(2), ave 0.896969696969697
+----------------------------------------------------------------
+
+2019-07-16 15:13:53 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-07-16 15:13:55 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 35 seconds
+Variants: generated 126, syntax-valid 78, build-succeeded 31
+Fitness: max 0.9090909090909091(27), min 0.09090909090909091(1), ave 0.8709677419354839
+----------------------------------------------------------------
+
+2019-07-16 15:13:55 [main] [INFO]  KGenProgMain - entered the era of 12th generation.
+2019-07-16 15:13:58 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 15:13:58 [main] [INFO]  Patch - 
+--- incorrect_method.Class1
++++ incorrect_method.Class1
+@@ -17,7 +17,7 @@
+ 		int sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.pow(i); // bug here
++				sum += sample.fact(i);
+ 			}
+ 		}
+ 		return sum;
+2019-07-16 15:13:58 [main] [INFO]  KGenProgMain - execution time: 38 seconds

@@ -1,0 +1,157 @@
+2019-07-17 04:18:08 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work410399932429494910
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 11
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_overload
+================================================================
+2019-07-17 04:18:11 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 04:18:14 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 54, build-succeeded 13
+Fitness: max 0.5(8), min 0.0(4), ave 0.3153846153846154
+----------------------------------------------------------------
+
+2019-07-17 04:18:14 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 04:18:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 100, syntax-valid 70, build-succeeded 12
+Fitness: max 0.5(3), min 0.0(4), ave 0.16666666666666666
+----------------------------------------------------------------
+
+2019-07-17 04:18:17 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 04:18:20 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 seconds
+Variants: generated 100, syntax-valid 78, build-succeeded 12
+Fitness: max 0.5(4), min 0.0(3), ave 0.20833333333333334
+----------------------------------------------------------------
+
+2019-07-17 04:18:20 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-17 04:18:23 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 seconds
+Variants: generated 100, syntax-valid 65, build-succeeded 9
+Fitness: max 0.5(4), min 0.0(1), ave 0.26666666666666666
+----------------------------------------------------------------
+
+2019-07-17 04:18:23 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-17 04:18:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 seconds
+Variants: generated 100, syntax-valid 67, build-succeeded 11
+Fitness: max 0.5(3), min 0.0(7), ave 0.14545454545454548
+----------------------------------------------------------------
+
+2019-07-17 04:18:25 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-17 04:18:28 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 seconds
+Variants: generated 104, syntax-valid 65, build-succeeded 16
+Fitness: max 0.5(3), min 0.0(6), ave 0.134375
+----------------------------------------------------------------
+
+2019-07-17 04:18:28 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-17 04:18:30 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 19 seconds
+Variants: generated 108, syntax-valid 70, build-succeeded 18
+Fitness: max 0.5(4), min 0.0(6), ave 0.15555555555555556
+----------------------------------------------------------------
+
+2019-07-17 04:18:30 [main] [INFO]  KGenProgMain - entered the era of 8th generation.
+2019-07-17 04:18:33 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 22 seconds
+Variants: generated 120, syntax-valid 80, build-succeeded 18
+Fitness: max 0.5(5), min 0.0(3), ave 0.19166666666666668
+----------------------------------------------------------------
+
+2019-07-17 04:18:33 [main] [INFO]  KGenProgMain - entered the era of 9th generation.
+2019-07-17 04:18:37 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 26 seconds
+Variants: generated 126, syntax-valid 81, build-succeeded 14
+Fitness: max 0.5(5), min 0.0(3), ave 0.21785714285714283
+----------------------------------------------------------------
+
+2019-07-17 04:18:37 [main] [INFO]  KGenProgMain - entered the era of 10th generation.
+2019-07-17 04:18:40 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 29 seconds
+Variants: generated 128, syntax-valid 91, build-succeeded 32
+Fitness: max 0.5(10), min 0.0(5), ave 0.209375
+----------------------------------------------------------------
+
+2019-07-17 04:18:40 [main] [INFO]  KGenProgMain - entered the era of 11th generation.
+2019-07-17 04:18:44 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 32 seconds
+Variants: generated 132, syntax-valid 98, build-succeeded 27
+Fitness: max 0.5(4), min 0.0(5), ave 0.14074074074074072
+----------------------------------------------------------------
+
+2019-07-17 04:18:44 [main] [INFO]  KGenProgMain - entered the era of 12th generation.
+2019-07-17 04:18:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 37 seconds
+Variants: generated 134, syntax-valid 92, build-succeeded 25
+Fitness: max 0.5(9), min 0.0(3), ave 0.23199999999999998
+----------------------------------------------------------------
+
+2019-07-17 04:18:48 [main] [INFO]  KGenProgMain - entered the era of 13th generation.
+2019-07-17 04:18:51 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 40 seconds
+Variants: generated 142, syntax-valid 86, build-succeeded 26
+Fitness: max 0.5(7), min 0.0(5), ave 0.18942307692307692
+----------------------------------------------------------------
+
+2019-07-17 04:18:51 [main] [INFO]  KGenProgMain - entered the era of 14th generation.
+2019-07-17 04:18:54 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 43 seconds
+Variants: generated 146, syntax-valid 78, build-succeeded 25
+Fitness: max 0.5(10), min 0.0(3), ave 0.249
+----------------------------------------------------------------
+
+2019-07-17 04:18:54 [main] [INFO]  KGenProgMain - entered the era of 15th generation.
+2019-07-17 04:18:57 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 46 seconds
+Variants: generated 136, syntax-valid 86, build-succeeded 25
+Fitness: max 0.5(12), min 0.0(5), ave 0.27
+----------------------------------------------------------------
+
+2019-07-17 04:18:57 [main] [INFO]  KGenProgMain - entered the era of 16th generation.
+2019-07-17 04:19:00 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 04:19:00 [main] [INFO]  Patch - 
+--- incorrect_overload.Class1
++++ incorrect_overload.Class1
+@@ -4,9 +4,11 @@
+ public class Class1 {
+ 	public int run (ArrayList<Integer> list, int a, int n, int l, int h){
+ 		Class2 sample = new Class2();
++		int res = 1;
+ 
+ 		int x, y;
+ 		x = sample.pow(a, n) % list.size(); // bug here
++		x = sample.pow(a) % list.size();
+ 		y = sample.pow(a, n) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+2019-07-17 04:19:02 [main] [INFO]  KGenProgMain - execution time: 50 seconds

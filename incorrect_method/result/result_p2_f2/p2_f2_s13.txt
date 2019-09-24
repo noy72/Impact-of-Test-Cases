@@ -1,0 +1,58 @@
+2019-07-17 00:51:32 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work7689035328619966235
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 13
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_method
+================================================================
+2019-07-17 00:51:34 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 00:51:36 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 100, syntax-valid 50, build-succeeded 15
+Fitness: max 0.5(11), min 0.4(4), ave 0.47333333333333333
+----------------------------------------------------------------
+
+2019-07-17 00:51:36 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 00:51:39 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 100, syntax-valid 68, build-succeeded 12
+Fitness: max 0.5(11), min 0.4(1), ave 0.4916666666666667
+----------------------------------------------------------------
+
+2019-07-17 00:51:39 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 00:51:41 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 00:51:41 [main] [INFO]  Patch - 
+--- incorrect_method.Class1
++++ incorrect_method.Class1
+@@ -10,14 +10,13 @@
+ 		y = sample.pow(a, n) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+-		if(subList == null) {
++		if(subList == null)
+ 			return -1;
+-		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.pow(i); // bug here
++				sum += sample.fact(i);
+ 			}
+ 		}
+ 		return sum;
+2019-07-17 00:51:41 [main] [INFO]  KGenProgMain - execution time: 7 seconds

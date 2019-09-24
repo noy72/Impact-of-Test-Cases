@@ -1,0 +1,67 @@
+2019-07-17 03:44:42 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work5794621516147556985
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 81
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_condition
+================================================================
+2019-07-17 03:44:44 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 03:44:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 59, build-succeeded 18
+Fitness: max 0.9523809523809523(2), min 0.8095238095238095(1), ave 0.9047619047619047
+----------------------------------------------------------------
+
+2019-07-17 03:44:48 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 03:44:50 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 100, syntax-valid 63, build-succeeded 12
+Fitness: max 0.9523809523809523(1), min 0.9047619047619048(11), ave 0.9087301587301587
+----------------------------------------------------------------
+
+2019-07-17 03:44:50 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 03:44:53 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 seconds
+Variants: generated 100, syntax-valid 66, build-succeeded 12
+Fitness: max 0.9047619047619048(12), min 0.9047619047619048(12), ave 0.9047619047619048
+----------------------------------------------------------------
+
+2019-07-17 03:44:53 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-17 03:44:55 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 100, syntax-valid 60, build-succeeded 15
+Fitness: max 0.9523809523809523(1), min 0.9047619047619048(14), ave 0.9079365079365079
+----------------------------------------------------------------
+
+2019-07-17 03:44:55 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-17 03:44:57 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 03:44:57 [main] [INFO]  Patch - 
+--- incorrect_condition.Class1
++++ incorrect_condition.Class1
+@@ -17,7 +17,8 @@
+ 		int sum = 0;
+ 		for(int i : subList) {
+ 			if(i <= h) { // bug here
+-				sum += sample.fact(i);
++				if (i >= l)
++					sum += sample.fact(i);
+ 			}
+ 		}
+ 		return sum;
+2019-07-17 03:44:58 [main] [INFO]  KGenProgMain - execution time: 13 seconds

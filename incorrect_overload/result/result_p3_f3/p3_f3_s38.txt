@@ -1,0 +1,108 @@
+2019-07-17 03:18:42 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work3602227945244572358
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 38
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_overload
+================================================================
+2019-07-17 03:18:46 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 03:18:49 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 55, build-succeeded 12
+Fitness: max 0.5(8), min 0.0(3), ave 0.35000000000000003
+----------------------------------------------------------------
+
+2019-07-17 03:18:49 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 03:18:52 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 100, syntax-valid 69, build-succeeded 9
+Fitness: max 0.5(4), min 0.0(3), ave 0.26666666666666666
+----------------------------------------------------------------
+
+2019-07-17 03:18:52 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 03:18:56 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 100, syntax-valid 69, build-succeeded 12
+Fitness: max 0.5(4), min 0.0(5), ave 0.21666666666666667
+----------------------------------------------------------------
+
+2019-07-17 03:18:56 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-17 03:18:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 seconds
+Variants: generated 100, syntax-valid 66, build-succeeded 10
+Fitness: max 0.55(1), min 0.0(4), ave 0.24500000000000002
+----------------------------------------------------------------
+
+2019-07-17 03:18:58 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-17 03:19:01 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 seconds
+Variants: generated 104, syntax-valid 71, build-succeeded 17
+Fitness: max 0.5(5), min 0.0(6), ave 0.21764705882352942
+----------------------------------------------------------------
+
+2019-07-17 03:19:01 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-17 03:19:04 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 seconds
+Variants: generated 104, syntax-valid 57, build-succeeded 8
+Fitness: max 0.5(3), min 0.0(4), ave 0.2125
+----------------------------------------------------------------
+
+2019-07-17 03:19:04 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-17 03:19:06 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 03:19:06 [main] [INFO]  Patch - 
+--- incorrect_overload.Class1
++++ incorrect_overload.Class1
+@@ -8,6 +8,8 @@
+ 		int x, y;
+ 		x = sample.pow(a, n) % list.size(); // bug here
+ 		y = sample.pow(a, n) % list.size();
++		x = sample.pow(a, n) % list.size();
++		x = sample.pow(a) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+ 		if(subList == null) {
+2019-07-17 03:19:06 [main] [INFO]  Patch - 
+--- incorrect_overload.Class2
++++ incorrect_overload.Class2
+@@ -8,9 +8,9 @@
+ 
+ 	public int pow(int a, int n) {
+ 		int res = 1;
+-		for(int i = 0; i < n; i++) {
++		for(int i = 0; i < n; i++)
+ 			res *= a;
+-		}
++		int i = 0, l = 0, h = 0;
+ 		return res;
+ 	}
+ 
+@@ -24,9 +24,8 @@
+ 
+ 
+ 	public ArrayList<Integer> getSubList(ArrayList<Integer> list, int l, int r){
+-		if(l < 0 || r >= list.size() || l >= r) {
++		if(l < 0 || r >= list.size() || l >= r)
+ 			return null;
+-		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+ 		for(; l < r; l++) {
+2019-07-17 03:19:07 [main] [INFO]  KGenProgMain - execution time: 21 seconds

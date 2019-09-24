@@ -1,0 +1,102 @@
+2019-07-16 22:04:14 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work2812730400080494099
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 10
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_method
+================================================================
+2019-07-16 22:04:16 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 22:04:19 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 55, build-succeeded 14
+Fitness: max 0.047619047619047616(13), min 0.0(1), ave 0.04421768707482993
+----------------------------------------------------------------
+
+2019-07-16 22:04:19 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 22:04:22 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 100, syntax-valid 67, build-succeeded 10
+Fitness: max 0.047619047619047616(9), min 0.0(1), ave 0.04285714285714286
+----------------------------------------------------------------
+
+2019-07-16 22:04:22 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 22:04:25 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 8 seconds
+Variants: generated 100, syntax-valid 68, build-succeeded 10
+Fitness: max 0.047619047619047616(5), min 0.0(5), ave 0.023809523809523808
+----------------------------------------------------------------
+
+2019-07-16 22:04:25 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-16 22:04:27 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 100, syntax-valid 71, build-succeeded 14
+Fitness: max 0.9523809523809523(1), min 0.0(5), ave 0.09523809523809523
+----------------------------------------------------------------
+
+2019-07-16 22:04:27 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-16 22:04:29 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 seconds
+Variants: generated 102, syntax-valid 73, build-succeeded 14
+Fitness: max 0.9523809523809523(1), min 0.0(6), ave 0.09183673469387754
+----------------------------------------------------------------
+
+2019-07-16 22:04:29 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-16 22:04:32 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 seconds
+Variants: generated 112, syntax-valid 74, build-succeeded 18
+Fitness: max 0.9523809523809523(1), min 0.0(8), ave 0.07671957671957672
+----------------------------------------------------------------
+
+2019-07-16 22:04:32 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-16 22:04:35 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 22:04:35 [main] [INFO]  Patch - 
+--- incorrect_method.Class1
++++ incorrect_method.Class1
+@@ -10,14 +10,15 @@
+ 		y = sample.pow(a, n) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+-		if(subList == null) {
++		if(subList == null)
++		if (subList == null) {
+ 			return -1;
+ 		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+-				sum += sample.pow(i); // bug here
++				sum += sample.fact(i);
+ 			}
+ 		}
+ 		return sum;
+2019-07-16 22:04:35 [main] [INFO]  Patch - 
+--- incorrect_method.Class2
++++ incorrect_method.Class2
+@@ -8,6 +8,7 @@
+ 
+ 	public int pow(int a, int n) {
+ 		int res = 1;
++		Class2 sample = new Class2();
+ 		for(int i = 0; i < n; i++) {
+ 			res *= a;
+ 		}
+2019-07-16 22:04:35 [main] [INFO]  KGenProgMain - execution time: 18 seconds

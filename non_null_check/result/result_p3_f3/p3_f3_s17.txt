@@ -1,0 +1,59 @@
+2019-07-17 08:46:44 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work8399662401796184095
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 17
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/non_null_check
+================================================================
+2019-07-17 08:46:45 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 08:46:47 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 1 seconds
+Variants: generated 100, syntax-valid 67, build-succeeded 7
+Fitness: max 0.5(6), min 0.05(1), ave 0.43571428571428567
+----------------------------------------------------------------
+
+2019-07-17 08:46:47 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 08:46:48 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 71, build-succeeded 8
+Fitness: max 0.5(4), min 0.0(2), ave 0.2625
+----------------------------------------------------------------
+
+2019-07-17 08:46:48 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 08:46:49 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 4 seconds
+Variants: generated 100, syntax-valid 68, build-succeeded 9
+Fitness: max 0.5(5), min 0.0(2), ave 0.3055555555555556
+----------------------------------------------------------------
+
+2019-07-17 08:46:49 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-17 08:46:50 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 08:46:50 [main] [INFO]  Patch - 
+--- non_null_check.Class1
++++ non_null_check.Class1
+@@ -13,6 +13,9 @@
+ 		// if(subList == null) { //bug here
+ 		// 	return -1;
+ 		// }
++		if (subList == null) {
++			return -1;
++		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+2019-07-17 08:46:51 [main] [INFO]  KGenProgMain - execution time: 5 seconds

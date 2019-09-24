@@ -1,0 +1,54 @@
+2019-07-16 13:49:13 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work3774195388257757564
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 57
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/non_null_check
+================================================================
+2019-07-16 13:49:15 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 13:49:19 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 60, build-succeeded 9
+Fitness: max 0.5(5), min 0.0(4), ave 0.2777777777777778
+----------------------------------------------------------------
+
+2019-07-16 13:49:19 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 13:49:22 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 13:49:22 [main] [INFO]  Patch - 
+--- non_null_check.Class1
++++ non_null_check.Class1
+@@ -13,6 +13,9 @@
+ 		// if(subList == null) { //bug here
+ 		// 	return -1;
+ 		// }
++		if (subList == null) {
++			return -1;
++		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+2019-07-16 13:49:22 [main] [INFO]  Patch - 
+--- non_null_check.Class2
++++ non_null_check.Class2
+@@ -9,7 +9,6 @@
+ 	public int pow(int a, int n) {
+ 		int res = 1;
+ 		for(int i = 0; i < n; i++) {
+-			res *= a;
+ 		}
+ 		return res;
+ 	}
+2019-07-16 13:49:22 [main] [INFO]  KGenProgMain - execution time: 6 seconds

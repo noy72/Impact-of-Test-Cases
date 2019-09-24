@@ -1,0 +1,103 @@
+2019-07-17 01:27:50 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work3306921253824758527
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 91
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_parameter
+================================================================
+2019-07-17 01:27:53 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 01:27:56 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 52, build-succeeded 14
+Fitness: max 0.18181818181818182(2), min 0.09090909090909091(12), ave 0.1038961038961039
+----------------------------------------------------------------
+
+2019-07-17 01:27:56 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 01:27:59 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 100, syntax-valid 66, build-succeeded 9
+Fitness: max 0.09090909090909091(8), min 0.0(1), ave 0.08080808080808081
+----------------------------------------------------------------
+
+2019-07-17 01:27:59 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 01:28:02 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 seconds
+Variants: generated 100, syntax-valid 67, build-succeeded 14
+Fitness: max 0.09090909090909091(10), min 0.0(4), ave 0.06493506493506494
+----------------------------------------------------------------
+
+2019-07-17 01:28:02 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-17 01:28:05 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 seconds
+Variants: generated 100, syntax-valid 65, build-succeeded 16
+Fitness: max 0.09090909090909091(13), min 0.0(3), ave 0.07386363636363637
+----------------------------------------------------------------
+
+2019-07-17 01:28:05 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-17 01:28:07 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 14 seconds
+Variants: generated 102, syntax-valid 71, build-succeeded 17
+Fitness: max 0.09090909090909091(13), min 0.0(4), ave 0.06951871657754011
+----------------------------------------------------------------
+
+2019-07-17 01:28:07 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-17 01:28:10 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 17 seconds
+Variants: generated 108, syntax-valid 90, build-succeeded 16
+Fitness: max 0.2727272727272727(1), min 0.0(1), ave 0.10227272727272727
+----------------------------------------------------------------
+
+2019-07-17 01:28:10 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-17 01:28:12 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 01:28:12 [main] [INFO]  Patch - 
+--- incorrect_parameter.Class1
++++ incorrect_parameter.Class1
+@@ -10,15 +10,13 @@
+ 		y = sample.pow(a, n) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+-		if(subList == null) {
++		if(subList == null)
+ 			return -1;
+-		}
+ 
+ 		int sum = 0;
+ 		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.fact(a); // bug here
+-			}
++			if(i >= l && i <= h)
++				sum += sample.fact(i);
+ 		}
+ 		return sum;
+ 	}
+2019-07-17 01:28:12 [main] [INFO]  Patch - 
+--- incorrect_parameter.Class2
++++ incorrect_parameter.Class2
+@@ -10,6 +10,7 @@
+ 		int res = 1;
+ 		for(int i = 0; i < n; i++) {
+ 			res *= a;
++			int sum = 0;
+ 		}
+ 		return res;
+ 	}
+2019-07-17 01:28:13 [main] [INFO]  KGenProgMain - execution time: 20 seconds

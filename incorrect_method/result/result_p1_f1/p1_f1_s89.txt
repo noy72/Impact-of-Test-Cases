@@ -1,0 +1,80 @@
+2019-07-16 13:28:25 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work5145867836062435845
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 89
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_method
+================================================================
+2019-07-16 13:28:27 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 13:28:31 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 55, build-succeeded 14
+Fitness: max 0.5(14), min 0.5(14), ave 0.5
+----------------------------------------------------------------
+
+2019-07-16 13:28:31 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 13:28:34 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 7 seconds
+Variants: generated 100, syntax-valid 71, build-succeeded 9
+Fitness: max 0.5(9), min 0.5(9), ave 0.5
+----------------------------------------------------------------
+
+2019-07-16 13:28:34 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 13:28:38 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 10 seconds
+Variants: generated 100, syntax-valid 70, build-succeeded 14
+Fitness: max 0.5(14), min 0.5(14), ave 0.5
+----------------------------------------------------------------
+
+2019-07-16 13:28:38 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-16 13:28:41 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 13:28:41 [main] [INFO]  Patch - 
+--- incorrect_method.Class1
++++ incorrect_method.Class1
+@@ -15,11 +15,8 @@
+ 		}
+ 
+ 		int sum = 0;
+-		for(int i : subList) {
+-			if(i >= l && i <= h) {
+-				sum += sample.pow(i); // bug here
+-			}
+-		}
++		for(int i : subList)
++			sum += sample.fact(i);
+ 		return sum;
+ 	}
+ 
+2019-07-16 13:28:41 [main] [INFO]  Patch - 
+--- incorrect_method.Class2
++++ incorrect_method.Class2
+@@ -29,9 +29,10 @@
+ 		}
+ 
+ 		ArrayList<Integer> res = new ArrayList<Integer>();
+-		for(; l < r; l++) {
+-			res.add(list.get(l));
+-		}
++		for(; l < r; l++)
++			for (; l < r; l++) {
++				res.add(list.get(l));
++			}
+ 		return res;
+ 	}
+ }
+2019-07-16 13:28:41 [main] [INFO]  KGenProgMain - execution time: 13 seconds

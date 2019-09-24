@@ -1,0 +1,56 @@
+2019-07-17 03:45:36 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work1684971172733075601
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 71
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_overload
+================================================================
+2019-07-17 03:45:38 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 03:45:41 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 100, syntax-valid 60, build-succeeded 10
+Fitness: max 0.5(8), min 0.2(2), ave 0.44000000000000006
+----------------------------------------------------------------
+
+2019-07-17 03:45:41 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 03:45:44 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 100, syntax-valid 75, build-succeeded 19
+Fitness: max 0.5(7), min 0.0(8), ave 0.2263157894736842
+----------------------------------------------------------------
+
+2019-07-17 03:45:44 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 03:45:47 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 03:45:47 [main] [INFO]  Patch - 
+--- incorrect_overload.Class1
++++ incorrect_overload.Class1
+@@ -4,10 +4,14 @@
+ public class Class1 {
+ 	public int run (ArrayList<Integer> list, int a, int n, int l, int h){
+ 		Class2 sample = new Class2();
++		if (list == null) {
++			return -1;
++		}
+ 
+ 		int x, y;
+ 		x = sample.pow(a, n) % list.size(); // bug here
+ 		y = sample.pow(a, n) % list.size();
++		x = sample.pow(a) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+ 		if(subList == null) {
+2019-07-17 03:45:47 [main] [INFO]  KGenProgMain - execution time: 9 seconds

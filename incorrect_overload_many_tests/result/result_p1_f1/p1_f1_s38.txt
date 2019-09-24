@@ -1,0 +1,92 @@
+2019-07-16 13:16:57 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work4398672796203526045
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT6M
+testTimeLimit = PT1M
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 38
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/incorrect_overload_many_tests
+================================================================
+2019-07-16 13:16:59 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-16 13:17:03 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 3 seconds
+Variants: generated 100, syntax-valid 55, build-succeeded 12
+Fitness: max 0.6666666666666666(8), min 0.0(3), ave 0.45555555555555555
+----------------------------------------------------------------
+
+2019-07-16 13:17:03 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-16 13:17:06 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 6 seconds
+Variants: generated 100, syntax-valid 68, build-succeeded 9
+Fitness: max 0.6666666666666666(4), min 0.0(3), ave 0.3259259259259259
+----------------------------------------------------------------
+
+2019-07-16 13:17:06 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-16 13:17:09 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 9 seconds
+Variants: generated 100, syntax-valid 70, build-succeeded 12
+Fitness: max 0.6666666666666666(5), min 0.0(4), ave 0.31111111111111106
+----------------------------------------------------------------
+
+2019-07-16 13:17:09 [main] [INFO]  KGenProgMain - entered the era of 4th generation.
+2019-07-16 13:17:12 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 12 seconds
+Variants: generated 100, syntax-valid 68, build-succeeded 12
+Fitness: max 0.6666666666666666(4), min 0.0(4), ave 0.3111111111111111
+----------------------------------------------------------------
+
+2019-07-16 13:17:12 [main] [INFO]  KGenProgMain - entered the era of 5th generation.
+2019-07-16 13:17:15 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 15 seconds
+Variants: generated 100, syntax-valid 76, build-succeeded 18
+Fitness: max 0.6666666666666666(7), min 0.0(6), ave 0.2962962962962963
+----------------------------------------------------------------
+
+2019-07-16 13:17:15 [main] [INFO]  KGenProgMain - entered the era of 6th generation.
+2019-07-16 13:17:17 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 18 seconds
+Variants: generated 102, syntax-valid 62, build-succeeded 14
+Fitness: max 0.6666666666666666(4), min 0.0(6), ave 0.22857142857142856
+----------------------------------------------------------------
+
+2019-07-16 13:17:17 [main] [INFO]  KGenProgMain - entered the era of 7th generation.
+2019-07-16 13:17:20 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-16 13:17:20 [main] [INFO]  Patch - 
+--- incorrect_overload_many_tests.Class1
++++ incorrect_overload_many_tests.Class1
+@@ -8,6 +8,7 @@
+ 		int x, y;
+ 		x = sample.pow(a, n) % list.size(); // bug here
+ 		y = sample.pow(a, n) % list.size();
++		x = sample.pow(a) % list.size();
+ 
+ 		ArrayList<Integer> subList = sample.getSubList(list, x, y);
+ 		if(subList == null) {
+2019-07-16 13:17:20 [main] [INFO]  Patch - 
+--- incorrect_overload_many_tests.Class2
++++ incorrect_overload_many_tests.Class2
+@@ -10,6 +10,7 @@
+ 		int res = 1;
+ 		for(int i = 0; i < n; i++) {
+ 			res *= a;
++			Class2 sample = new Class2();
+ 		}
+ 		return res;
+ 	}
+2019-07-16 13:17:21 [main] [INFO]  KGenProgMain - execution time: 21 seconds

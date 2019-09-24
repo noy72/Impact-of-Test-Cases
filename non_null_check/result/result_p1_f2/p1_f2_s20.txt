@@ -1,0 +1,63 @@
+2019-07-17 01:17:51 [main] [INFO]  KGenProgMain - 
+==================== kGenProg Configuration ====================
+targetProject = .
+executionTests = []
+workingDir = /var/folders/fb/qqrpbwjd7cg3mc3d5hghr7k40000gn/T/kgenprog-work1324466214929025617
+outDir = kgenprog-out
+mutationGeneratingCount = 100
+crossoverGeneratingCount = 100
+headcount = 100
+maxGeneration = 100
+timeLimit = PT3M
+testTimeLimit = PT30S
+requiredSolutionsCount = 1
+logLevel = INFO
+randomSeed = 20
+scope = PACKAGE
+needNotOutput = false
+currentDirectory = /Users/noy/Dropbox/研究/APRとテストケースの関係/2019study/src2/non_null_check
+================================================================
+2019-07-17 01:17:53 [main] [INFO]  KGenProgMain - entered the era of 1st generation.
+2019-07-17 01:17:56 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 2 seconds
+Variants: generated 100, syntax-valid 63, build-succeeded 8
+Fitness: max 0.16666666666666666(5), min 0.0(3), ave 0.10416666666666666
+----------------------------------------------------------------
+
+2019-07-17 01:17:56 [main] [INFO]  KGenProgMain - entered the era of 2nd generation.
+2019-07-17 01:17:58 [main] [INFO]  KGenProgMain - 
+----------------------------------------------------------------
+Elapsed time: 5 seconds
+Variants: generated 100, syntax-valid 72, build-succeeded 8
+Fitness: max 0.16666666666666666(7), min 0.0(1), ave 0.14583333333333331
+----------------------------------------------------------------
+
+2019-07-17 01:17:58 [main] [INFO]  KGenProgMain - entered the era of 3rd generation.
+2019-07-17 01:18:01 [main] [INFO]  KGenProgMain - found enough solutions.
+2019-07-17 01:18:01 [main] [INFO]  Patch - 
+--- non_null_check.Class1
++++ non_null_check.Class1
+@@ -15,6 +15,9 @@
+ 		// }
+ 
+ 		int sum = 0;
++		if (subList == null) {
++			return -1;
++		}
+ 		for(int i : subList) {
+ 			if(i >= l && i <= h) {
+ 				sum += sample.fact(i);
+2019-07-17 01:18:01 [main] [INFO]  Patch - 
+--- non_null_check.Class2
++++ non_null_check.Class2
+@@ -9,7 +9,7 @@
+ 	public int pow(int a, int n) {
+ 		int res = 1;
+ 		for(int i = 0; i < n; i++) {
+-			res *= a;
++			ArrayList<Integer> list=new ArrayList<>();
+ 		}
+ 		return res;
+ 	}
+2019-07-17 01:18:01 [main] [INFO]  KGenProgMain - execution time: 8 seconds
